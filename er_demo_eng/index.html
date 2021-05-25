@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Eskap Rum</title>
+  </head>
+  <body>
+
+    <!--MODALIT-->
+
+    <!--TAUSTAKUVA MODALIT-->
+    <div class="modal">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>The computer is on</p>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>PCs For Dummies</p>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>HTML For Dummies</p>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>JavaScript For Dummies</p>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>The True Prophecies or Prognostications of Michael Nostradamus,
+          Physician to Henry II. Francis II. and Charles IX. Kings of France,
+          and One of the Best Astronomers That Ever Were: a Work Full of Curiosity
+          and Learning</p>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p id="ovilukko">The door is locked</p>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>Lush</p>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>Plant home</p>
+      </div>
+    </div>
+    <div class="modal">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>It's stopped</p>
+      </div>
+    </div>
+
+    <!--INTERACTABLE-->
+    <div class="modal" id="modal-lok">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>Looks like a lock</p>
+        <span onclick="unlock()">unlock?</span>
+      </div>
+    </div>
+    <div class="modal" id="modal-skul">
+      <div class="modal-content">
+        <button class="close" onclick="sulje(this)">&times;</button>
+        <p>Skull</p>
+        <span onclick="take()">Take?</span>
+      </div>
+    </div>
+    <div class="modal" id="modal-ufo">
+      <div class="modal-content">
+        <button class="close" onClick="sulje(this)">&times;</button>
+        <p>Ufojeremiah</p>
+        <span id="pokeUfo" onclick="pester()">Poke?</span>
+      </div>
+    </div>
+
+  <!--VIESTIT-->
+  <div class="viesti">
+    <div class="modal-content">
+      <button class="close" onClick="sulje(this)">&times;</button>
+      <p>You need a key</p>
+    </div>
+  </div>
+  <div class="viesti">
+    <div class="modal-content">
+      <button class="close" onClick="sulje(this)">&times;</button>
+      <p>PÄÄSIT ULOS</p>
+    </div>
+  </div>
+<!--NEVERMIND TÄSSÄ ON PAIKKA VIESTEILLE EN SAANU TOIMIIN EDELLISII
+JA HALUUN NUKKUUN JOSKUS-->
+  <div id="viesti">TRY TO GET OUT</div>
+    <!--PELIALUE-->
+    <div id="pelialue">
+      <img src="img/bg.png" id="bg" usemap="#bg-map">
+      <img src="img/lok.png" id="lok" onclick="popup(5)" usemap="#lok-map">
+      <img src="img/skul.png" id="skul" usemap="#skul-map">
+      <img src="img/ufo.png" id="ufo" usemap="#ufo-map">
+    </div>
+
+<!--HITBOXIT-->
+    <map name="bg-map">
+      <area alt="pc" id="pchitbox" onclick="popup(0)" coords="190,267,195,340,259,344,257,375,276,369,278,340,350,324,354,252" shape="poly">
+      <area alt="kirja1" id="kirja1hitbox" onclick="popup(1)" coords="392,160,409,222" shape="rect">
+      <area alt="kirja2" id="kirja2hitbox" onclick="popup(2)" coords="415,156,435,224" shape="rect">
+      <area alt="kirja3" id="kirja3hitbox" onclick="popup(3)" coords="440,149,463,217" shape="rect">
+      <area alt="kirja4" id="kirja4hitbox" onclick="popup(4)" coords="467,154,485,224" shape="rect">
+      <area alt="ovi" id="ovihitbox" onclick="popup(5)" coords="544,149,739,500" shape="rect">
+      <area alt="kasvi" id="kasvihitbox" onclick="popup(6)" coords="785,290,793,344,833,368,855,361,881,352,917,316,897,308,873,321,849,348,844,327,870,266,869,232,853,236,836,302,821,189,806,181,811,237,801,243,819,332,793,289" shape="poly">
+      <area alt="pot" id="pothitbox" onclick="popup(7)" coords="802,393,765,503,804,537,881,531,901,515,899,460,857,392,823,380" shape="poly">
+      <area alt="kello" id="kellohitbox" onclick="popup(8)" coords="955,146,69" shape="circle">
+    </map>
+    <map name="lok-map">
+      <area id="lokhitbox" onclick="popup(9)" coords="31,32,12,34,16,52,45,54,50,38" shape="poly">
+    </map>
+    <map name="skul-map">
+      <area id="skulhitbox" onclick="popup(10)" coords="32,26,17,56,25,76,35,84,46,105,55,107,62,101,68,110,75,108,81,95,80,81,91,63,83,28,56,18" shape="poly">
+    </map>
+    <map name="ufo-map">
+      <area id="ufohitbox" onclick="popup(11)" coords="39,31,28,52,40,76,56,90,32,99,20,164,28,178,39,172,28,156,42,106,57,144,57,153,59,214,68,154,88,217,77,145,85,103,100,152,96,162,108,163,110,148,97,91,65,90,69,78,75,40,60,25" shape="poly">
+    </map>
+    <script type="text/javascript" src="script.js">
+    </script>
+  </body>
+</html>
