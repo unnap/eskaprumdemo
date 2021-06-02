@@ -14,7 +14,6 @@ const kello = document.getElementById('kellohitbox');*/
 const lok = document.getElementById('lok');
 const skul = document.getElementById('skul');
 const ufo = document.getElementById('ufo');
-const x = document.getElementsByClassName('close');
 let tavaraluettelo = [];
 
 function popup(x) {

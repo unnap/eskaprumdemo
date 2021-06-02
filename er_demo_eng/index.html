@@ -2,10 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="style.css">
+      <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet'>
     <meta charset="utf-8">
     <title>Eskap Rum</title>
   </head>
-  <body>
+  <body onload="drawDesktop()">
 
     <!--MODALIT-->
 
@@ -13,7 +14,8 @@
     <div class="modal">
       <div class="modal-content">
         <button class="close" onClick="sulje(this)">&times;</button>
-        <p>The computer is on</p>
+        <canvas width="500" height="400" id="flappyufo"></canvas>
+        <div id="newApproach"></div>
       </div>
     </div>
     <div class="modal">
@@ -137,6 +139,8 @@ JA HALUUN NUKKUUN JOSKUS-->
       <area id="ufohitbox" onclick="popup(11)" coords="39,31,28,52,40,76,56,90,32,99,20,164,28,178,39,172,28,156,42,106,57,144,57,153,59,214,68,154,88,217,77,145,85,103,100,152,96,162,108,163,110,148,97,91,65,90,69,78,75,40,60,25" shape="poly">
     </map>
     <script type="text/javascript" src="script.js">
+    </script>
+    <script type="text/javascript" src="flappyufo2.js">
     </script>
   </body>
 </html>
