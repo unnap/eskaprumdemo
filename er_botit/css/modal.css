@@ -1,0 +1,81 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-content_vankila {
+  position: absolute;
+  width: 1102px;
+  height: 602px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.modal-content {
+  background-color: #ccda96;
+  color: #000;
+  margin: 0;
+  position: absolute;
+  /*keskitys leveys ja pituussuunnassa*/
+  top: 50%;
+  left: 50%;
+  /*transform: translateX(-50%);*/
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 600px;
+  text-align: center;
+  font-size: 20px;
+  border: 1px solid #e1e3d9;
+}
+
+.credMod {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+
+
+.close {
+  float: right;
+  background-color: #ccda96;
+  color: #384c3a;
+  border: 0;
+  width: 35px;
+  height: 35px;
+  font-weight: bold;
+  font-size: 25px;
+  position: absolute;
+  left: 564px;
+  top: 0;
+}
+.close:hover {
+  cursor: pointer;
+}
+
+
+
+/*Voittomodalien mutoilua. Kävin hakeen netistä röyhkeesti koodit
+gradiantteja varten. Kiitos css-tricks*/
+.gotOutMod {
+  background-color: #000;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(to left, #f10ce5, #0cf1de);
+}
+.gotOutModBtn {
+  background: -webkit-linear-gradient(#f10ce5, #0cf1de);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gotOutModBtn:hover {
+  background: #f10ce5;
+  -webkit-text-fill-color: #000;
+  background-image: linear-gradient(to bottom left, #f10ce5, #0cf1de);
+}

@@ -1,0 +1,54 @@
+#muistipeli {
+  width: 690px;
+  height: 490px;
+  margin: auto;
+  background-color: #63ffe2;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: inset 0 0 57px 2px #cafef4, /*Laatikon sisälle pieni hehkumis-efekti*/
+                    0 0 0 2px #000,
+              0 0 50px 2px #fff; /*Hehkumis-efekti laatikon ulkopuolelle*/
+}
+
+#muistiMod {
+  width: 800px;
+  height: 600px;
+  padding-top: 50px;
+}
+
+#muistiClose {
+  left: 764px;
+}
+
+.kortti {
+  cursor: pointer;
+}
+/*
+.kortti:active {
+  box-shadow: 0 0 10px 2px #fff;
+}*/
+
+.fadeCard {
+  animation: fadeOut ease 3s;
+  animation-fill-mode: forwards;
+  cursor: default;
+  /*box-shadow: 0 0 10px 2px #fff;*/
+}
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0.2;
+  }
+}
+.fadedCard {
+  opacity: 0.2;
+  cursor: default;
+  /*box-shadow: 0 0 10px 2px #fff;*/
+}

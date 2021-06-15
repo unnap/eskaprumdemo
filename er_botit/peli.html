@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/pelialue.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/modalcontents.css">
+    <link rel="stylesheet" href="css/muisti.css">
+    <link rel="stylesheet" href="css/credits.css">
+    <link href='https://fonts.googleapis.com/css?family=VT323|Allura' rel='stylesheet'>
+    <title>Escape the room</title>
+  </head>
+  <body onload="drawDesktop()">
+      <!--OVI -->
+      <!--modal avaa objektia klikatessa ruudun jossa on tekstiä
+        sekä x-nappi sulkemista varten-->
+
+      <!--KEHYS -->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <img src="grafiikka/mom.png" class="kuva">
+          </div>
+        </div>
+      </div>
+      <!--KELLO -->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <img src="grafiikka/kello.png">
+            <br>
+            <span class="modDialogue">It's stopped...</span>
+          </div>
+        </div>
+      </div>
+      <!--NÄYTTÖ -->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <canvas width="500" height="400" id="flappyufo"></canvas>
+            <div id="newApproach"></div>
+            </div>
+        </div>
+      </div>
+
+      <!--KIRJA 1-->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <img src="grafiikka/book1.png" alt="" class= "kuva">
+          </div>
+        </div>
+      </div>
+      <!--KIRJA 2 -->
+      <!--Kirja 2 antaa vihjeen oven koodista (6174)-->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <img src="grafiikka/page2.png">
+            <br>
+            <span><p>The page is torn...</p>
+            <p>But I remember this book was about an Indian mathematician!</p></span>
+          </div>
+        </div>
+      </div>
+      <!--KIRJA 3 -->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <img src="grafiikka/book2.png" class="kuva">
+          </div>
+        </div>
+      </div>
+      <!-- KIRJA 4-->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <img src="grafiikka/book3.png" class="kuva">
+          </div>
+        </div>
+      </div>
+      <!-- KIRJA 5-->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content credMod">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <div id="codeCred" class="credits"><h2>Code</h2><br>
+              <table class="codeCredT">
+                <tr><th class="codeName">Key Lock Challenge</th></tr>
+                <tr><td class="coderName">Unna</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Code Lock Challenge</th></tr>
+                <tr><td class="coderName">Karoliina</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Electric Lock Challenge</th></tr>
+                <tr><td class="coderName">Unna</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Game Area</th></tr>
+                <tr><td class="coderName">Karoliina</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Modals</th></tr>
+                <tr><td class="coderName">Unna</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Dialogue box</th></tr>
+                <tr><td class="coderName">Unna</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Inventory</th></tr>
+                <tr><td class="coderName">Karoliina</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Win logic</th></tr>
+                <tr><td class="coderName">Unna</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- KIRJA 6-->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <div id="graphCred" class="credits">
+              <h2>Graphics</h2>
+              <!--<span class="devBy">Pixel graphics were created using Aseprite</span>-->
+              <table class="codeCredT" id="graphCredT">
+                <tr><th class="codeName">Main Game</th></tr>
+                <tr><td class="coderName">Karoliina</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Memory Game</th></tr>
+                <tr><td class="coderName">Karoliina</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Flappy UFO 2</th></tr>
+                <tr><td class="coderName">Unna</td></tr>
+              </table>
+              <table class="codeCredT">
+                <tr><th class="codeName">Victory Screen</th></tr>
+                <tr><td class="coderName">Unna</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- KIRJA 7-->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content credMod">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <div id="soundCred1" class="credits">
+            <span class="credInfo">All music and sounds have been taken from
+            <a href="https://opengameart.org/">OpenGameArt.org</a> or <a href="https://freesound.org/">Freesound</a><br></span>
+            <br>
+            <table class="soundTable"><tr><th colspan="2">General Sounds and Music</th></tr>
+              <tr><td colspan="2" class="soundName">Background Ambient <span class="soundOrigName">(Etirwer (Looped).ogg)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/etirwer">Joseph Gilbert</a>
+              </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+              <tr><td colspan="2" class="soundName">Victory Song <span class="soundOrigName">(384. Steppin Up.mp3)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/steppin-up">Dan Knoflicek</a>
+              </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+              <tr><td colspan="2" class="soundName">Door Lock Sounds <span class="soundOrigName">(LockedDoorHandleJiggle.ogg/UnlockDoor.wav)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/door-lock-sounds">Cough-E</a>
+              </td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+              <tr><td colspan="2" class="soundName">Door Open <span class="soundOrigName">(Chest Creak.wav)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/open-chest">spookymodem</a>
+              </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+              <tr><td colspan="2" class="soundName">Curtain <span class="soundOrigName">(492619__khanyi-190188__curtain-on-rail.wav)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://freesound.org/people/Khanyi_190188/sounds/492619/">Khanyi_190188</a>
+              </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+              <tr><td colspan="2" class="soundName">Item Pick-up <span class="soundOrigName">(jump.wav)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/3-item-sounds">Michel Baradari</a>
+              </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+            </table>
+          </div>
+
+          <div id="soundCred2" class="credits">
+            <table class="soundTable"><tr><th colspan="2">Memory Game Sounds and Music</th></tr>
+              <tr><td colspan="2" class="soundName">Card Bloops <span class="soundOrigName">(SFX_Powerup_44.wav/SFX_Powerup_47.wav)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/8-bit-powerup-1">Jesús Lastra</a>
+              </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+
+              <tr><td colspan="2" class="soundName">Box Lock Open <span class="soundOrigName">(DoorLock.wav)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/door-lock-sounds">Cough-E</a>
+              </td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+
+              <tr><td colspan="2" class="soundName">Key Fanfare <span class="soundOrigName">(Fanfare for the King.wav)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/fanfare-for-the-king">Jon K. Fite</a>
+              </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+            </table>
+          </div>
+
+          <div id="soundCred3" class="credits">
+            <table class="soundTable"><tr><th colspan="2">FU2 Music</th></tr>
+              <tr><td colspan="2" class="soundName">Title screen <span class="soundOrigName">(8Bit Title Screen.mp3)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/8bit-title-screen">Joth</a>
+              </td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+
+              <tr><td colspan="2" class="soundName">Background music <span class="soundOrigName">(Epic1x.wav)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/8-bit-theme-intensity">Wolfgang</a>
+              </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+
+              <tr><td colspan="2" class="soundName">Victory Fanfare <span class="soundOrigName">(Victory.wav)</span></td></tr>
+              <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+              <tr><td><a href="https://opengameart.org/content/victory">celestialghost8</a>
+              </td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+            </table>
+          </div>
+
+          <div id="soundCred4" class="credits">
+          <table class="soundTable"><tr><th colspan="2">FU2 Sounds</th></tr>
+            <tr><td colspan="2" class="soundName">Click <span class="soundOrigName">(click_003.ogg)</span></td></tr>
+            <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+            <tr><td><a href="https://opengameart.org/content/interface-sounds">Kenney.nl</a>
+            </td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+
+            <tr><td colspan="2" class="soundName">Start & Continue <span class="soundOrigName">(SFX_Powerup_03.wav/SFX_Powerup_49.wav)</span></td></tr>
+            <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+            <tr><td><a href="https://opengameart.org/content/8-bit-powerup-1">Jesús Lastra</a>
+            </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+
+            <tr><td colspan="2" class="soundName">Fly <span class="soundOrigName">(vgmenuselect.wav)</span></td></tr>
+            <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+            <tr><td><a href="https://opengameart.org/content/8bit-menu-select">Fupi</a>
+            </td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+
+            <tr><td colspan="2" class="soundName">Explosion <span class="soundOrigName">(explosion.wav)</span></td></tr>
+            <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+            <tr><td><a href="https://opengameart.org/content/explosion-0">TinyWorlds</a>
+            </td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+
+            <tr><td colspan="2" class="soundName">Passing tentacles <span class="soundOrigName">(coin10.wav/coin2.wav)</span></td></tr>
+            <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+            <tr><td><a href="https://opengameart.org/content/10-8bit-coin-sounds">Luke.RUSTLTD</a>
+            </td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+
+            <tr><td colspan="2" class="soundName">Punch <span class="soundOrigName">(hit22.mp3.flac)</span></td></tr>
+            <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+            <tr><td><a href="https://opengameart.org/content/37-hitspunches">Independent.nu</a>
+            </td><td><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></td></tr>
+
+            <tr><td colspan="2" class="soundName">Shatter <span class="soundOrigName">(Bottle Break.wav)</span></td></tr>
+            <tr class="artistInfo"><td>Artist</td><td>License</td></tr>
+            <tr><td><a href="https://opengameart.org/content/breaking-bottle">spookymodem</a>
+            </td><td><a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0</a></td></tr>
+          </table>
+        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KIRJA 8-->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <div id="botit" class="credits">
+              <span class="devBy">This game was developed as a student project by</span>
+              <br><br>
+              <span id="botitSpan">Team Botit <br>2021</span>
+            <br><br><span class="ty4playing">Thank you for playing!</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!--LUKKO(koodi) -->
+      <div class="modal" id="modal-lock-code">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <form id="codeinput">
+            <p id="locked">This lock needs a code</p>
+              <input id="lockbutton" type="text" maxlength="4">
+            </form>
+            <button id="codebutton" type="button" onclick="codeLock()">Click!</button>
+          </div>
+        </div>
+      </div>
+
+      <!--MUISTIO -->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content">
+            <button class="close" onclick="shut(this)">&times;</button>
+            <div id="momNote">
+              <p>Dear Ufojorma. You locked yourself up again after reading those stories
+              about humans last night. <br>
+              I couldn't find the way to open the door so I went
+              through the window.
+              <br>But you need to get the door open. <br><br>
+              Take care, <br>
+              mom</p>
+              <p>P.S. Don't forget your bag and jacket!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--MUISTIPELI-->
+      <div class="modal">
+        <div class="modal-content_vankila">
+          <div class="modal-content" id="muistiMod">
+            <button class="close" id="muistiClose" onclick="shut(this)">&times;</button>
+            <div id="muistipeli"></div>
+            <span class="modDialogue" id="boxDiag">There's a touch screen on the lid?</span>
+          </div>
+        </div>
+      </div>
+
+    <!--VOITTO-->
+    <div id="voittotesti">
+        <div id="voittotsis">
+          <span id="youGotOUT">YOU GOT OUT!</span><br>
+          <img src="grafiikka/ufoparty.png" alt="" class= "dance">
+          <br><br>
+          <span class="ty4playing">Game by Team Botit</span><br>
+          <span class="ty4playing bigger">Thank you for playing!</span>
+      </div>
+    </div>
+
+    <div id="pelialueContainer">
+      <!--PELIALUE -->
+      <div id="pelialue">
+      <!--HUONE JA TAUSTAELEMENTIT -->
+        <img src="grafiikka/huone.png" id="room" usemap="#room-map">
+        <img src="grafiikka/avain.png" id="key" class="keyAnim" usemap="#key-map">
+        <img src="grafiikka/laatikko.png" id="box" usemap="#box-map">
+        <img src="grafiikka/lukko_avain.png" id="lock-key" usemap="#lock-key-map">
+        <img src="grafiikka/lukko_koodi.png" id="lock-code" usemap="#lock-code-map">
+        <img src="grafiikka/lukko_sahko.png" id="lock-elec" usemap="#lock-elec-map">
+        <img src="grafiikka/muistilappu.png" id="note" usemap="#note-map">
+        <img src="grafiikka/ovi_auki.png" id="door-open">
+        <img src="grafiikka/verho.png" id="curtain" usemap="#curtain-map">
+        <img src="grafiikka/laukku.png" id="bag" usemap="#bag-map">
+        <img src="grafiikka/takki.png" id="jacket" usemap="#jacket-map">
+        <img src="grafiikka/ruukku.png" class="pot" usemap="#pot-map">
+        <img src="grafiikka/pc_rikki.png" id="pc-broken" usemap="#pc-broken-map">
+        <img src="grafiikka/fu/fusmash.png" id="monitor-broken" onclick="dialogi('monitor')">
+        <img src="grafiikka/fu/fudesktop.png" id="monitor-desktop" onclick="dialogi('monitor')">
+        <img src="grafiikka/fu/futitlecard.png" id="monitor-game" onclick="dialogi('monitor')">
+        <img src="grafiikka/fu/fuwin.png" id="monitor-win" onclick="dialogi('monitor')">
+        <img src="grafiikka/laatikko_auki.png" id="box-open" onclick="dialogi('box-open')">
+        <img src="grafiikka/laatikko_kansi.png" id="box-lid" onclick="dialogi('box-lid')">
+      </div>
+      <div id="dialogiBoxi">I overslept... I need hurry to school!</div>
+    </div>
+
+
+    <!--TAUSTAELEMENTTIEN HITBOXIT -->
+    <map name="room-map">
+      <area alt="ovi" id="hit-door" onclick="dialogi('doorClosed')" coords="46,112,263,569" shape="rect">
+      <area alt="kehys" id="hit-frame" onclick="dialogi('picture')" coords="439,263,480,323" shape="rect">
+      <area alt="kello" id="hit-clock" onclick="dialogi('clock')" coords="792,155,41" shape="circle">
+      <area alt="naytto" id="hit-monitor" onclick="dialogi('monitor')" coords="756,319,849,384" shape="rect">
+      <area alt="pc" id="hit-pc" onclick="dialogi('pc')" coords="867,292,921,408" shape="rect">
+      <area alt="ikkuna" id="hit-window" onclick="dialogi('window')" coords="1035,132,1099,370" shape="rect">
+      <area alt="kirja1" id="hit-book1" onclick="dialogi('book1')" coords="443,134,458,196" shape="rect">
+      <area alt="kirja2" id="hit-book2" onclick="dialogi('book2')" coords="464,130,477,196" shape="rect">
+      <area alt="kirja3" id="hit-book3" onclick="dialogi('book3')" coords="483,132,493,196" shape="rect">
+      <area alt="kirja4" id="hit-book4" onclick="dialogi('book4')" coords="500,140,515,198" shape="rect">
+      <area alt="kirja5" id="hit-book5" onclick="dialogi('book5')" coords="501,253,514,323" shape="rect">
+      <area alt="kirja6" id="hit-book6" onclick="dialogi('book6')" coords="520,261,536,323" shape="rect">
+      <area alt="kirja7" id="hit-book7" onclick="dialogi('book7')" coords="540,245,560,322" shape="rect">
+      <area alt="kirja8" id="hit-book8" onclick="dialogi('book8')" coords="563,254,586,324" shape="rect">
+    </map>
+
+    <!--ERILLISTEN OBJEKTIEN HITBOXIT -->
+
+    <map name="key-map">
+      <area alt="avain" id="hit-key" onclick="dialogi('key')" coords="46,83,12,4" shape="rect">
+    </map>
+    <map name="box-map">
+      <area alt="laatikko" id="hit-box" onclick="dialogi('box')" coords="107,23,13,109" shape="rect">
+    </map>
+    <map name="lock-key-map">
+      <area alt="lukko_avain" id="hit-lock-key" onclick="dialogi('keyLock')" coords="59,14,21,71" shape="rect">
+    </map>
+    <map name="lock-code-map">
+      <area alt="lukko_koodi" id="hit-lock-code" onclick="dialogi('codLock')" coords="7,63,45,5" shape="rect">
+    </map>
+    <map name="lock-elec-map">
+      <area alt="lukko_sahko" id="hit-lock-elec" onclick="dialogi('eleLock')" coords="12,70,50,12" shape="rect">
+    </map>
+    <map name="note-map">
+      <area alt="muistilappu" id="hit-note" onclick="dialogi('note')" coords="62,1,-1,83" shape="rect">
+    </map>
+    <map name="door-open-map">
+      <area alt="ovi_auki" id="hit-door-open" onclick="dialogi('openDoor')" coords="26,487,245,28" shape="rect">
+    </map>
+    <map name="curtain-map">
+      <area alt="verho" id="hit-curtain" onclick="curtainOff()" coords="24,484,138,42" shape="rect">
+    </map>
+    <map name="bag-map">
+      <area alt="laukku" id="hit-bag" onclick="takeBag()" coords="0,1,109,99" shape="rect">
+    </map>
+    <map name="jacket-map">
+      <area alt="takki" id="hit-jacket" onclick="takeJacket()" coords="0,0,111,204" shape="rect">
+    </map>
+    <map name="pot-map">
+      <area alt="ruukku" id="hit-pot" onclick="movePot()" coords="69,14,12,111" shape="rect">
+    </map>
+    <map name="pc-broken-map">
+    <area alt="" id="hit-pc-broken" onclick="dialogi('pcSolved')" coords="0,0,57,212" shape="rect">
+    </map>
+
+    <script type="text/javascript" src="js/peli.js">
+    </script>
+    <script type="text/javascript" src="js/flappyufo2.js">
+    </script>
+    <script type="text/javascript" src="js/muisti.js">
+    </script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+#pelialue{
+  width: 1102px;
+  height: 602px;
+  border: 1px solid #e1e3d9;
+  margin: auto;
+  position: relative;
+}
+#pelialueContainer {
+    width: 100%;
+    margin: auto;
+}
+#box{
+  position: absolute;
+  top: 472px;
+  left: 812px;
+}
+#box-open {
+  position: absolute;
+  top: 512px;
+  left: 825px;
+  display: none;
+  cursor: pointer;
+}
+#box-lid {
+  position: absolute;
+  top: 570px;
+  left: 870px;
+  display: none;
+  cursor: pointer;
+}
+#key {
+  position: absolute;
+  top: 512px;
+  left: 849px;
+  width: 43px;
+  height: 75px;
+  display: none;
+}
+.keyAnim {
+  animation: rise linear 10s;
+  animation-fill-mode: forwards;
+}
+@keyframes rise {
+  0% { transform: rotateY(0deg) translateY(0); }
+  100% { transform: translateY(-70px); }
+}
+
+#curtain{
+  position: absolute;
+  top: 78px;
+  left: 946px;
+}
+
+.pot{
+  position: absolute;
+  top: 332px;
+  left: 490px;
+}
+
+#bag{
+  position: absolute;
+  top: 458px;
+  left: 430px;
+}
+
+#jacket{
+  position: absolute;
+  top: 180px;
+  left: 270px;
+}
+
+#note{
+  position: absolute;
+  top: 200px;
+  left: 130px;
+}
+
+#lock-key{
+  position: absolute;
+  top: 250px;
+  left: 190px;
+}
+
+#lock-code{
+  position: absolute;
+  top: 330px;
+  left: 204px;
+}
+
+#lock-elec{
+  position: absolute;
+  top: 400px;
+  left: 200px;
+}
+
+#door-open{
+  position: absolute;
+  top: 84px;
+  left: 21px;
+  display: none;
+}
+
+#pc-broken{
+  position: absolute;
+  top: 291px;
+  left: 865px;
+  display: none;
+}
+
+.movePot{
+  left: 450px;
+}
+
+#monitor-desktop {
+  position: absolute;
+  cursor: pointer;
+  top: 321px;
+  left: 759px;
+  width: 88px;
+  height: 63px;
+}
+
+#monitor-game {
+  position: absolute;
+  cursor: pointer;
+  top: 321px;
+  left: 759px;
+  width: 88px;
+  height: 63px;
+  display: none
+}
+
+#monitor-win {
+  position: absolute;
+  cursor: pointer;
+  top: 321px;
+  left: 759px;
+  width: 88px;
+  height: 63px;
+  display: none
+}
+
+#monitor-broken {
+  position: absolute;
+  cursor: pointer;
+  top: 321px;
+  left: 759px;
+  width: 88px;
+  height: 63px;
+  display: none;
+}
